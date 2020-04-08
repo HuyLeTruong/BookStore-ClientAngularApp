@@ -805,6 +805,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var SliderComponent = function SliderComponent() {
       _classCallCheck(this, SliderComponent);
+
+      this.updateSrc = function () {
+        var imgArray = Array.from(document.getElementsByTagName('img')).forEach(function (e) {
+          var currentSrc = e.src;
+          e.src = document.URL + '/' + currentSrc;
+        });
+        var imgArray = Array.from(document.getElementsByTagName('script')).forEach(function (e) {
+          var currentSrc = e.src;
+          e.src = document.URL + '/' + currentSrc;
+        });
+      };
+
+      this.updateSrc();
     };
 
     SliderComponent.ɵfac = function SliderComponent_Factory(t) {
@@ -883,7 +896,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           selector: 'slider',
           templateUrl: 'slider.component.html'
         }]
-      }], null, null);
+      }], function () {
+        return [];
+      }, null);
     })();
     /***/
 

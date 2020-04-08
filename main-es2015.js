@@ -396,6 +396,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class SliderComponent {
+    constructor() {
+        this.updateSrc = function () {
+            var imgArray = Array.from(document.getElementsByTagName('img')).forEach((e) => {
+                var currentSrc = e.src;
+                e.src = document.URL + '/' + currentSrc;
+            });
+            var imgArray = Array.from(document.getElementsByTagName('script')).forEach((e) => {
+                var currentSrc = e.src;
+                e.src = document.URL + '/' + currentSrc;
+            });
+        };
+        this.updateSrc();
+    }
 }
 SliderComponent.ɵfac = function SliderComponent_Factory(t) { return new (t || SliderComponent)(); };
 SliderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SliderComponent, selectors: [["slider"]], decls: 17, vars: 0, consts: [["id", "carouselExampleIndicators", "data-ride", "carousel", 1, "carousel", "slide"], [1, "carousel-indicators"], ["data-target", "#carouselExampleIndicators", "data-slide-to", "0", 1, "active"], ["data-target", "#carouselExampleIndicators", "data-slide-to", "1"], [1, "carousel-inner"], [1, "carousel-item", "active"], ["src", "assets/pictures/pic1.jpg", "alt", "...", 1, "d-block", "w-100"], [1, "carousel-item"], ["src", "assets/pictures/pic2.jpg", "alt", "...", 1, "d-block", "w-100"], ["href", "#carouselExampleIndicators", "role", "button", "data-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "sr-only"], ["href", "#carouselExampleIndicators", "role", "button", "data-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"]], template: function SliderComponent_Template(rf, ctx) { if (rf & 1) {
@@ -430,9 +443,9 @@ SliderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: 'slider',
-                templateUrl: 'slider.component.html'
+                templateUrl: 'slider.component.html',
             }]
-    }], null, null); })();
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
